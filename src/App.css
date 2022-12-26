@@ -1,0 +1,243 @@
+:root{
+  /*Font Sizes Mobile*/
+  --fs-body-mobile: 16px;
+
+
+  /*Font Sizes TABLET-DESKTOP*/
+  --fs-body-tablet: 18px;
+  --fs-heading-large : 32px; 
+  --fs-heading-medium :24px;
+  
+  /*Colors*/
+  --black: #24232C;
+  --grey: #817D92;
+  --white :#E6E5EA;
+  --darkBlue: #18171F;
+  --green: #A4FFAF;
+  --red: #F64A4A;
+  --orange: #FB7C58;
+  --yellow: #F8CD65;
+}
+
+body{
+  background-color: var(--darkBlue);
+  color: var(--white);
+}
+
+/*Typograpgy*/
+
+.generator-output{font-size: var(--fs-heading-medium);}
+.form-strength-level{font-size: var(--fs-body-tablet);}
+.form-character-length{font-size: var(--fs-heading-medium);}
+
+@media(min-width:500px){
+  .generator{font-size: var(--fs-body-tablet);}
+  .generator-output{font-size: var(--fs-heading-large);}  
+}
+
+
+/*Layout*/
+
+.wrapper{
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+main{
+  width: 90%;
+  max-width: 540px;
+}
+
+.generator{margin: auto;}
+
+.generator-title{
+  text-align: center;
+  color: var(--grey);
+  margin-bottom: 1em;
+}
+
+.generator-output-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--black);
+}
+
+
+.generator-form,
+.generator-output-wrapper{
+  padding: 1em;
+}
+
+.generator-output{
+  background-color: transparent;
+  width:85%;
+  border: none;
+  color: var(--white);
+}
+
+.generator-output::placeholder{
+  color: --gre;
+}
+
+.generator-output:focus{
+  outline: none;
+}
+
+
+.copy-icon:hover{
+  transform: rotate(360deg);
+  background-color: transparent;
+  transition: 300ms;
+  cursor: pointer;
+  position: relative;
+  color: var(--white);
+}
+
+
+
+
+
+.generator-form{
+  margin-top:1em;
+  background-color: var(--black);
+}
+
+.form-character-length-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-character-length{
+  color: var(--green);
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width:100%;
+  height: 8px;
+  background: var(--green);
+  border-radius: 5px;
+  margin: 1.5rem 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background:var(--white);
+  cursor:pointer;
+  box-shadow: 0 0 2px 0 #555;
+  transition: background .3s ease-in-out;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover,
+input[type="range"]::-webkit-slider-thumb:active{
+  background-color: var(--black);
+}
+
+input[type=range]::-webkit-slider-runnable-track  {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+
+
+label{
+  margin-left: 1em;
+}
+
+input[type="checkbox"]{
+  margin-right: .6em;
+  margin-bottom: 1rem;
+  -webkit-appearance: none;
+  position: relative;
+}
+
+
+input[type="checkbox"]::before{
+  transition: 500ms;
+  position: absolute;
+  display: inline-flex;
+  left:0;
+  content: "";
+  width: 20px;
+  height: 20px;
+  margin-right: .1em;
+  border: 1px solid;
+  border-color: var(--green);
+}
+
+
+input[type="checkbox"]:checked:before{
+  transition: 500ms;
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  left:0;
+  content: url(./assets/images/icon-check.svg);
+  width: 20px;
+  height: 20px;
+  background-color: var(--green);
+}
+
+.form-strength{
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  margin-top: 2em;
+  background-color: var(--darkBlue);
+
+}
+
+.form-strength-level{
+  margin-left: auto;
+}
+
+.form-strength-bars{
+  display: flex;
+}
+
+.form-strength-bar{
+  margin-left: .5em;
+  width:10px;
+  height: 28px;
+  border: 1px solid;
+  border-color: var(--white);
+}
+
+.form-strength-bar:first-child{ margin-left:1rem; }
+
+.form-button{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--green);
+  padding: 1.125rem 0;
+  margin-top: 1em;
+  border: 2px solid;
+  
+  transition: 500ms;
+}
+
+.form-button:hover{
+  background-color: var(--black);
+  color: var(--green);
+  border-color: var(--darkBlue);
+}
+
+/*Media Layout*/
+
+@media(min-width:500px){
+  .generator-output-wrapper,
+  .generator-form{
+    padding: 2em;
+  }
+}
